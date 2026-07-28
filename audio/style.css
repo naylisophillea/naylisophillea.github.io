@@ -1,0 +1,734 @@
+@font-face {
+  font-family: 'MyCustomFont';
+  src:url('fonts/Cheese Milky.otf');
+}
+
+*{
+	box-sizing:border-box;
+}
+
+/* sprite sheet for all deco*/
+.deco-icon{
+	display:inline-block;
+	background-image:url("images/deco-sprite.png");
+	background-repeat:no-repeat;
+	background-size:900% 100%;/*9 icons across*/
+}
+
+.deco-default{ background-position:0% 0; }
+.deco-strawberry{ background-position:12.5% 0; }
+.deco-flower{ background-position:25% 0; }
+.deco-sprinkles{ background-position:37.5% 0; }
+.deco-cherry{ background-position:50% 0; }
+.deco-macaron{ background-position:62.5% 0; }
+.deco-chocolate{ background-position:75% 0; }
+.deco-whippedcream{ background-position:87.5% 0; }
+.deco-blueberry{ background-position:100% 0; }
+
+
+body{
+	font-family: 'MyCustomFont';
+	text-align:center;
+	color:#A87676;
+	background:#FFF9F3;
+	overflow-x:hidden;
+}
+
+button{
+	font-family: 'MyCustomFont';
+	background-color:#FFF5F7;
+	border-radius:10px;
+	border:2px solid #F3D0D7;
+	color:#A87676;
+	margin-top: 20px;
+	cursor: pointer;/*make the cursor pointer when hover*/
+	transition:.3s;
+}
+
+button:hover{
+	background-color:#F3D0D7;
+}
+
+.titleContainer{
+    width:100%;
+    overflow:hidden;
+    height:60px;
+    background:#F3D0D7;
+    border:3px dashed #FFF9F3;
+    border-radius:30px;
+}
+
+#MainTitle{
+    display:flex;
+    width:max-content;
+    animation:scrollBanner 60s linear infinite;
+}
+
+#MainTitle span{
+    white-space:nowrap;
+    margin:0;
+    padding-right:80px;
+    color:#A87676;
+    font-size:40px;
+}
+
+@keyframes scrollBanner{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+h1{
+	text-align:center;
+}
+
+.divider {
+    height: 55px;
+    background-image: url("images/dessert_div.png");
+    background-repeat: repeat-x; /*repeats the image left to right yay*/
+}
+
+.page{
+    display:none;
+}
+
+.page.active{
+    display:block;
+}
+
+#HomeMP{
+	background:#FFF9F3;
+	color:#A87676;
+}
+
+/*signup form on the home*/
+#bakeryForm{
+	width:70%;
+	margin:60px auto;
+	padding:35px;
+	background:#FFF5F7;
+	border:3px dashed #F3D0D7;
+	border-radius:30px;
+}
+
+#bakeryForm input,
+#bakeryForm select{
+	width:70%;
+	padding:12px;
+	margin-top:8px;
+	font-family:'MyCustomFont';
+	font-size:18px;
+	background:#FFF9F3;
+	border:2px solid #F3D0D7;
+	border-radius:15px;
+}
+
+#bakeryForm input[type="submit"]{
+	background:#FFF5F7;
+	color:#A87676;
+	cursor:pointer;
+	transition:.3s;
+}
+
+#bakeryForm input[type="submit"]:hover{
+	background:#F3D0D7;
+	transform:scale(1.05);
+}
+
+/* types of desserts */
+.dessertMenu{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:30px;
+	color:#A87676;
+}
+
+.dessertBtn{
+	font-family:'MyCustomFont';
+    padding:15px 25px;
+    border:2px solid #F3D0D7;
+    border-radius:20px;
+    background:#FFF5F7;
+	color:#A87676;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.dessertBtn:hover{
+    background:#F3D0D7;
+    transform:scale(1.05);
+}
+
+#dessertInfo{
+    width:70%;
+    margin:40px auto;
+    padding:25px;
+	background:#FFF5F7;
+    border-radius:25px;
+    border:3px dashed #F3D0D7;
+    text-align:center;
+	color:#A87676;
+}
+
+/*around the world page*/
+.countryMenu{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:30px;
+}
+
+.countryBtn{
+    padding:15px 25px;
+    border:2px solid #F3D0D7;
+    border-radius:20px;
+    background:#FFF5F7;
+    color:#A87676;
+    font-family:'MyCustomFont';
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.countryBtn:hover{
+    background:#F3D0D7;
+    transform:scale(1.05);
+}
+
+#countryInfo{
+    width:70%;
+    margin:40px auto;
+    padding:25px;
+    background:#FFF5F7;
+    border-radius:25px;
+    border:3px dashed #F3D0D7;
+    text-align:center;
+}
+
+#quizBox{
+    width:70%;
+    margin:40px auto;
+	padding:30px;
+    background:#FFF5F7;
+    border:3px dashed #F3D0D7;
+    border-radius:25px;
+}
+
+.answers{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:25px;
+}
+
+.answerBtn{
+	background:#FFF5F7;
+    color:#A87676;
+    font-family:'MyCustomFont';
+    font-size:18px;
+    width:180px;
+    padding:15px;
+    border:2px solid #F3D0D7;
+    border-radius:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.answerBtn:hover{
+    background:#F3D0D7;
+    transform:scale(1.05);
+}
+
+#result{
+    margin-top:25px;
+    color:#A87676;
+}
+
+#nextQuestion{
+    margin-top:20px;
+}
+
+/*deco section*/
+.decoMenu{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:30px 0;
+}
+
+.studioBtn{
+    font-family:'MyCustomFont';
+    background:#FFF5F7;
+    color:#A87676;
+	font-size:18px;
+    border:2px solid #F3D0D7;
+    border-radius:20px;
+    padding:12px 24px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.studioBtn:hover{
+    background:#F3D0D7;
+    transform:scale(1.05);
+}
+
+.studioCard{
+    width:80%;
+    margin:40px auto;
+    background:#FFF5F7;
+    border:3px dashed #F3D0D7;
+    border-radius:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    padding:35px;
+    flex-wrap:wrap;
+}
+
+.studioImage{
+    flex:1;
+	min-width:250px;
+}
+
+.studioImage .deco-icon{
+    width:230px;
+    height:230px;
+    transition:0.4s;
+}
+
+.studioImage .deco-icon:hover{
+    transform:rotate(-5deg) scale(1.05);
+}
+
+.studioText{
+    flex:2;
+    min-width:300px;
+    text-align:left;
+    color:#A87676;
+}
+
+.studioText h3{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.studioText p{
+    font-size:20px;
+    line-height:1.8;
+}
+
+.rosalieTip{
+    margin-top:25px;
+    background:#FFF9F3;
+    border-radius:20px;
+    padding:18px;
+    border:2px dashed #F3D0D7;
+}
+
+.rosalieTip h4{
+    margin-top:0;
+    color:#A87676;
+}
+
+.rosalieTip p{
+    margin-bottom:0;
+}
+
+.studioCard:hover{
+    box-shadow:0 0 20px rgba(243,208,215,0.7);
+}
+
+/** game */
+.gameIntro{
+    width:70%;
+    margin:20px auto;
+    color:#A87676;
+}
+
+#customerCard{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    width:80%;
+    margin:30px auto;
+    padding:20px;
+    background:#FFF5F7;
+    border:3px dashed #F3D0D7;
+    border-radius:25px;
+}
+
+#customerImage{
+    width:180px;
+    height:auto;
+}
+
+#speechBubble{
+    width:400px;
+    background:#FFF9F3;
+    padding:20px;
+    border-radius:20px;
+    border:2px solid #F3D0D7;
+}
+
+#customerName{
+    color:#A87676;
+    margin-bottom:10px;
+}
+
+#customerOrder{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+#customerOrder .deco-icon{
+    width:60px;
+    height:60px;
+}
+
+#cakeArea{
+    display:flex;
+    justify-content:center;
+    margin:40px;
+}
+
+#cakeContainer{
+    position:relative;
+    width:350px;
+}
+
+#cakeBase{
+    width:100%;
+}
+
+#cakeDecorations{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+/*every decoration added*/
+.cakeItem{
+    position:absolute;
+    width:55px;
+    height:55px;
+}
+
+#decorationMenu{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:40px auto;
+    width:80%;
+}
+
+.decoBtn{
+    background:#FFF5F7;
+    border:2px solid #F3D0D7;
+    border-radius:20px;
+    padding:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.decoBtn:hover{
+    background:#F3D0D7;
+    transform:scale(1.05);
+}
+
+.decoBtn .deco-icon{
+    width:60px;
+    height:60px;
+}
+
+#gameButtons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin:30px;
+}
+
+#serveBtn,
+#resetBtn{
+    padding:12px 25px;
+    font-family:'MyCustomFont';
+    font-size:18px;
+    border:2px solid #F3D0D7;
+    border-radius:20px;
+    background:#FFF5F7;
+    color:#A87676;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#serveBtn:hover,
+#resetBtn:hover{
+    background:#F3D0D7;
+    transform:scale(1.05);
+}
+
+#gameMessage{
+    margin-top:20px;
+    color:#A87676;
+}
+
+#scoreBoard{
+    margin-top:20px;
+    font-size:22px;
+    color:#A87676;
+}
+
+footer{
+	border-radius: 25px;
+	padding:10px;
+	text-align:center;
+}
+
+/*rwd breakpoint 800*/
+@media screen and (max-width:800px){
+
+    body{
+        padding:0 10px;
+    }
+
+    img{
+        max-width:100%;
+        height:auto;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    h2{
+        font-size:21px;
+    }
+
+    p{
+        font-size:15px;
+    }
+
+    /*banner*/
+    .titleContainer{
+        height:44px;
+        border-radius:20px;
+    }
+
+    #MainTitle span{
+        font-size:20px;
+        padding-right:50px;
+    }
+
+    /* nav becomes a fatter tab bar */
+    nav{
+        position:sticky;
+        top:0;
+        z-index:10;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:8px;
+        background:#FFF5F7;
+        padding:10px;
+        margin:0 -10px 10px;
+        border-bottom:3px dashed #F3D0D7;
+    }
+
+    nav button{
+        width:100%;
+        margin:0;
+        padding:8px 4px;
+        font-size:13px;
+    }
+
+    #homeBtn{
+        grid-column:1 / -1;
+    }
+
+    /* Home */
+    .welcomeScene{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    #owner{
+        width:150px;
+        height:auto;
+    }
+
+    .dialogueBox{
+        width:100%;
+        margin-top:15px;
+    }
+
+    #bakeryForm{
+        width:100%;
+        margin:20px 0;
+        padding:20px;
+    }
+
+    #bakeryForm input,
+    #bakeryForm select{
+        width:100%;
+    }
+
+    /* Dessert,country,deco menus become a 2 coloms */
+    .dessertMenu,
+    .countryMenu,
+    .decoMenu{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+        margin:20px 0;
+    }
+
+    .dessertBtn,
+    .countryBtn,
+    .studioBtn{
+        width:100%;
+        margin:0;
+        padding:12px 8px;
+        font-size:15px;
+    }
+
+    #dessertInfo,
+    #countryInfo,
+    #quizBox{
+        width:100%;
+        margin:20px 0;
+        padding:18px;
+    }
+
+    /*deco studio*/
+    .studioCard{
+        flex-direction:column;
+        width:100%;
+        margin:20px 0;
+        padding:20px;
+        gap:20px;
+    }
+
+    .studioImage .deco-icon{
+        width:150px;
+        height:150px;
+    }
+
+    .studioText{
+        text-align:center;
+    }
+
+    .studioText h3{
+        font-size:24px;
+    }
+
+    .studioText p{
+        font-size:16px;
+        line-height:1.6;
+    }
+
+    /*quiz */
+    #quizBox{
+        padding:20px 15px;
+    }
+
+    .answers{
+        grid-template-columns:1fr;
+        display:grid;
+        gap:8px;
+    }
+
+    .answerBtn{
+        width:100%;
+    }
+
+    /*gameeuhh */
+    .gameIntro{
+        width:100%;
+    }
+
+    /*customer card*/
+    #customerCard{
+        width:100%;
+        gap:15px;
+        padding:15px;
+    }
+
+    #customerImage{
+        width:90px;
+    }
+
+    #speechBubble{
+        width:auto;
+        flex:1;
+        padding:14px;
+        text-align:left;
+    }
+
+    #customerOrder{
+        justify-content:flex-start;
+    }
+
+    #customerOrder .deco-icon{
+        width:42px;
+        height:42px;
+    }
+
+    #cakeArea{
+        margin:20px auto;
+    }
+
+    #cakeContainer{
+        width:240px;
+    }
+
+    #decorationMenu{
+        width:100%;
+        grid-template-columns:repeat(4,1fr);
+        gap:8px;
+        margin:20px auto;
+    }
+
+    .decoBtn{
+        padding:6px;
+    }
+
+    .decoBtn .deco-icon{
+        width:40px;
+        height:40px;
+    }
+
+    /* serve n reset*/
+    #gameButtons{
+        flex-direction:column;
+        gap:10px;
+        margin:20px 0;
+    }
+
+    #serveBtn,
+    #resetBtn{
+        width:100%;
+    }
+
+    #scoreBoard{
+        font-size:18px;
+    }
+
+}

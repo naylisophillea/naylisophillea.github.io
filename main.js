@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 //music
 const bakeryMusic = new Audio("audio/cafe_music.mp3");
 
